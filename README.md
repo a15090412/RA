@@ -23,7 +23,7 @@ devtools::install_github("a15090412/RA")
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
-##library(RA)
+## library(RA)
 ## basic example code
 ```
 
