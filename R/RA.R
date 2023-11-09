@@ -66,12 +66,14 @@ RA <- function(df , y , x , alpha = 0.95 , x0 = 0 ){
                               e_x_con_L,e_x_con_U,e_x_pre_L,e_x_pre_U))
 
   print(new_tb)
+  print("bata0 test")
   if(obj$coefficients[1,4] > (1-alpha)){
     print("don't reject,bata0 = 0")
   }else{
     print("reject")
   }
 
+  print("bata1 test")
   if(obj$coefficients[2,4] > (1-alpha)){
     print("don't reject,bata1 = 0")
   }else{
