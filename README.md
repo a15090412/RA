@@ -4,6 +4,10 @@
 # RA
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/a15090412/RA/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/a15090412/RA/actions/workflows/R-CMD-check.yaml)
+[![Codecov test
+coverage](https://codecov.io/gh/a15090412/RA/branch/main/graph/badge.svg)](https://app.codecov.io/gh/a15090412/RA?branch=main)
 <!-- badges: end -->
 
 The goal of RA is to …
