@@ -11,19 +11,29 @@ add <- function(a, b) {
   a + b
 }
 
+#' Title
+#'
+#' @param df
+#' @param y
+#' @param x
+#' @param alpha
+#' @param x0
+#'
+#' @return
+#' @export
+#'
+#' @examples
 RA <- function(df , y , x , alpha = 0.95 , x0 = 0 ){
 
   mod <- lm(y ~ x,data = df)
   obj <- summary(mod)
   tb <- anova(mod)
-  ci = confint(mod , level = alpha)
-  e_x_con = predict(mod,data.frame(x = x0),interval = "confidence" ,level = alpha )
-  e_x_pre = predict(mod,data.frame(x = x0),interval = "prediction" ,level = alpha )
+  ci <- confint(mod , level = alpha)
+  e_x_con <- predict(mod,data.frame(x = x0),interval = "confidence" ,level = alpha )
+  e_x_pre <- predict(mod,data.frame(x = x0),interval = "prediction" ,level = alpha )
   ##################################################################################
   bata1_h <- obj$coefficients[2,1]
   bata0_h <- obj$coefficients[1,1]
-  var_bata1 <- obj$coefficients[2,2]
-  var_bata0 <- obj$coefficients[1,2]
 
   SSreg <- tb$`Sum Sq`[1]
   SSres <- tb$`Sum Sq`[2]
