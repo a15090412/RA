@@ -34,14 +34,16 @@ RA <- function(df , y , x , alpha = 0.95 , x0 = 0 ){
   ##################################################################################
   bata1_h <- obj$coefficients[2,1]
   bata0_h <- obj$coefficients[1,1]
-
+  t_value_b0 <- ob$coefficients[1,3]
+  t_value_b1 <- ob$coefficients[2,3]
   SSreg <- tb$`Sum Sq`[1]
   SSres <- tb$`Sum Sq`[2]
   MSreg <- tb$`Mean Sq`[1]
   MSres <- tb$`Mean Sq`[2]
   F_value <- tb$`F value`[1]
   R_square <- SSreg/(SSres+SSreg)
-
+  df_ssreg <- tb$Df[1]
+  df_ssres <- tb$Df[2]
 
   bata0_ci_U <- ci[1,2]
   bata0_ci_L <- ci[1,1]
@@ -55,13 +57,13 @@ RA <- function(df , y , x , alpha = 0.95 , x0 = 0 ){
   e_x_pre_L <- e_x_pre[2]
 
   ##########################################################################
-  new_tb <- data.frame(x = c("bata0_h","bata1_h","SSreg","SSres",
-                            "MSreg" , "MSres","F_valus","R^2","bata0_ci_L",
+  new_tb <- data.frame(x = c("bata0_h","bata1_h","b0h/se[b10h]","b1h/se[b1h]","SSreg","SSres",
+                            "df_ssreg","df_ssres","MSreg" , "MSres","F_valus","R^2","bata0_ci_L",
                             "bata0_ci_U","bata1_ci_L","bata1_ci_U",
                             "E[y|x]_L of confidence","E[y|x]_U of confidence" ,
                             "E[y|x]_L of prediction","E[y|x]_U of prediction")
-                      , y = c(bata0_h,bata1_h,SSreg,SSres,
-                              MSreg,MSres,F_value,R_square,bata0_ci_L,
+                      , y = c(bata0_h,bata1_h,t_value_b0,t_value_b1,SSreg,SSres,
+                              df_ssreg,df_ssres,MSreg,MSres,F_value,R_square,bata0_ci_L,
                               bata0_ci_U,bata1_ci_L,bata1_ci_U,
                               e_x_con_L,e_x_con_U,e_x_pre_L,e_x_pre_U))
 
