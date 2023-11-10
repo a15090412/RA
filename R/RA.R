@@ -34,8 +34,8 @@ RA <- function(df , y , x , alpha = 0.95 , x0 = 0 ){
   ##################################################################################
   bata1_h <- obj$coefficients[2,1]
   bata0_h <- obj$coefficients[1,1]
-  t_value_b0 <- ob$coefficients[1,3]
-  t_value_b1 <- ob$coefficients[2,3]
+  t_value_b0 <- obj$coefficients[1,3]
+  t_value_b1 <- obj$coefficients[2,3]
   SSreg <- tb$`Sum Sq`[1]
   SSres <- tb$`Sum Sq`[2]
   MSreg <- tb$`Mean Sq`[1]
